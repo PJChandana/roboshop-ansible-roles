@@ -18,16 +18,18 @@
   register: entries_count
   when: component == "user"
 
-- name: print the count
-  ansible.builtin.debug:
-    msg: "entries count: {{entries_count}}"
+# - name: print the count
+#   ansible.builtin.debug:
+#     msg: "entries count: {{entries_count}}"
 
-- name: "load {{component}} data"
+- name: "load catalogue data"
   ansible.builtin.shell: "mongo --host mongodb.awsaiops.online < /app/schema/{{component}}.js"
   when: products_count.stdout == "0" and component == "catalogue"
+  ignore_errors: true
 
-- name: "load {{component}} data"
+- name: "load user data"
   ansible.builtin.command: "mongo --host mongodb.awsaiops.online < /app/schema/{{component}}.js"
   when: users_count.stdout == "0" and component == "user"
+  ignore_errors: true
 
    
