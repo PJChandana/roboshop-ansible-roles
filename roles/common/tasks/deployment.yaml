@@ -1,4 +1,4 @@
-- name: "stop{{component}}"
+- name: "stop {{component}}"
   tags:
   - deployment
   ansible.builtin.sevice:
