@@ -48,4 +48,4 @@
   - deployment
   ansible.builtin.sevice:
     name: "{{component}}"
-    state: stopped
+    state: restarted
