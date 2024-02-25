@@ -3,7 +3,7 @@
   - deployment
   ansible.builtin.sevice:
     name: "{{component}}"
-    state:  stopped
+    state: stopped
 
 - name: Recursively remove app directory
   tags:
@@ -41,7 +41,7 @@
   - deployment
   ansible.builtin.command: npm install
   args:
-      chdir: /app
+    chdir: /app
 
 - name: "restart {{component}}"
   tags:
