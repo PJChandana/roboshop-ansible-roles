@@ -1,1 +1,2 @@
 MONGODB_HOST: mongodb.awsaiops.online
+REDIS_HOST: redis.awsaiops.online
