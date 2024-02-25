@@ -10,12 +10,12 @@
 
 - name: "get the catalogue entries count"
   ansible.builtin.shell:  mongo --host mongodb.awsaiops.online --quiet --eval 'db = db.getSiblingDB("catalogue"); db.products.count()'
-  register: entries_count
+  register: products_count
   when: component == "catalogue"
 
 - name: "get the user entries count"
   ansible.builtin.shell:  mongo --host mongodb.awsaiops.online --quiet --eval 'db = db.getSiblingDB("user"); db.products.count()'
-  register: entries_count
+  register: users_count
   when: component == "user"
 
 # - name: print the count
@@ -28,7 +28,7 @@
   ignore_errors: true
 
 - name: "load user data"
-  ansible.builtin.command: "mongo --host mongodb.awsaiops.online < /app/schema/{{component}}.js"
+  ansible.builtin.shell: "mongo --host mongodb.awsaiops.online < /app/schema/{{component}}.js"
   when: users_count.stdout == "0" and component == "user"
   ignore_errors: true
 
