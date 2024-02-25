@@ -1,3 +1,10 @@
 MONGODB_HOST: mongodb.awsaiops.online
 REDIS_HOST: redis.awsaiops.online
 CATALOGUE_HOST: catalogue.awsaiops.online
+USER_HOST: user.awsaiops.online
+CART_HOST: cart.awsaiops.online
+SHIPPING_HOST: shipping.awsaiops.online
+PAYMENT_HOST: payment.awsaiops.online
+DISPATCH_HOST: dispatch.awaiops.online
+MYSQL_HOST: mysql.awsaiops.online
+RABBITMQ_HOST: rabbitmq.awsaiops.online
