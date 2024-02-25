@@ -2,8 +2,8 @@
   tags:
   - deployment
   ansible.builtin.sevice:
-    name:  "{{component}}"
-    state:   stopped
+    name: "{{component}}"
+    state:  stopped
 
 - name: Recursively remove app directory
   tags:
